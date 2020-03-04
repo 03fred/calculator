@@ -6,7 +6,7 @@
  * @flow
  */
 
-import React from 'react';
+import React, { Component } from 'react';
 import {
   SafeAreaView,
   StyleSheet,
@@ -25,58 +25,47 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 
 import Button from './src/components/Button';
+import Display from './src/components/Display';
 
+export default class App extends Component {
+  state = {
+    displayValue: '0'
+  }
+}
 const App: () => React$Node = () => {
   return (
-     <View style={styles.container}>
-       <View style={styles.button}>
-        <Button label='AC'/>
-        <Button label='/'/>
-        <Button label='AC'/>
-        <Button label='AC'/>
-        <Button label='AC'/>
-       </View>
-     </View>
+    <View style={styles.container}>
+      <Display value={this.state.displayValue} />
+      <View style={styles.button}>
+        <Button label='AC' />
+        <Button label='/' />
+        <Button label='7' />
+        <Button label='8' />
+        <Button label='9' />
+        <Button label='*' />
+        <Button label='4' />
+        <Button label='5' />
+        <Button label='6' />
+        <Button label='-' />
+        <Button label='1' />
+        <Button label='2' />
+        <Button label='3' />
+        <Button label='4' />
+        <Button label='.' />
+        <Button label='=' />
+      </View>
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
-  scrollView: {
-    backgroundColor: Colors.lighter,
+  container: {
+    flex: 1,
   },
-  engine: {
-    position: 'absolute',
-    right: 0,
-  },
-  body: {
-    backgroundColor: Colors.white,
-  },
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-    color: Colors.black,
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-    color: Colors.dark,
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-  footer: {
-    color: Colors.dark,
-    fontSize: 12,
-    fontWeight: '600',
-    padding: 4,
-    paddingRight: 12,
-    textAlign: 'right',
-  },
+  buttons: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+  }
 });
 
 export default App;
