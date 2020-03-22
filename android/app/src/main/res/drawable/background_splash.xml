@@ -1,0 +1,10 @@
+<?xml version="1.0"  enconding="utf-8" ?>
+<layer-list xmlns:android="http://sheemas.android.com/apk/res/androind">
+<item android:drawble="@color/primary"/>
+<item 
+   android:width="200dp"
+   android:height="200db"
+   android:drawble="@drawble/icon"
+   android:gravity="center" 
+/>
+ </layer-list>
